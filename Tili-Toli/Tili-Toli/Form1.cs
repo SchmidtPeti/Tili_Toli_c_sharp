@@ -24,6 +24,8 @@ namespace Tili_Toli
 
         Button[,] gombok = new Button[max, maxn];
         Image[,] images = new Image[max, maxn];
+        int[,] correct_queue = new int[max, maxn];
+
 
         static Random vél = new Random();
 
@@ -34,6 +36,7 @@ namespace Tili_Toli
             timer.Start();
             set_form();
             image_array();
+            win_queue_set();
             Panel game_Area = set_game_panel();
             Panel handler = set_handler();
             this.Controls.Add(handler);
@@ -45,23 +48,28 @@ namespace Tili_Toli
                 {
                     game_over();
                 }
-                if (win())
-                {
-                    MessageBox.Show("Nagy vagy gyíkarc");
-                }
             };
             game_area_load(game_Area);
 
         }
         private void game_over()
         {
-            MessageBox.Show("Game over!");
-            time = 100;
-            Kever();
+            timer.Stop();
+            DialogResult dialogResult = MessageBox.Show("Game over! Wanna play another one?","Tili-toli",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            if(dialogResult == DialogResult.Yes)
+            {
+                timer.Start();
+                time = 100;
+                Kever();
+            }
+            else
+            {
+                this.Close();             
+            }
         }
         private void pifi_ful_message()
         {
-
+            String[] messages = { "You are nothing", "I'm waiting", "pls do something you are so slow" };
         }
         private void game_area_load(Panel panel)
         {
@@ -76,13 +84,13 @@ namespace Tili_Toli
                     gombok[i, j].Size = new Size(szelesseg / maxn, magassag / max);
                     gombok[i, j].Location = new Point(j * (szelesseg / max), i * (magassag / max + 1));
                     gombok[i, j].FlatStyle = FlatStyle.Popup;
-                    gombok[i, j].BackColor = Color.Beige;
+                    gombok[i, j].BackColor = Color.Black;
                     gombok[i, j].Visible = true;
                     gombok[i, j].Font = new Font(gombok[i, j].Font.Name, 10, FontStyle.Bold);
                     panel.Controls.Add(gombok[i, j]);
                     gombok[i, j].Click += new EventHandler(Kattint);
                     gombok[i, j].BackgroundImage = images[i, j];
-                    gombok[i, j].Tag = sorszam;
+                    gombok[i, j].BackgroundImage.Tag = sorszam;
                   //  gombok[i, j].Text = gombok[i, j].Tag.ToString();
 
                 }
@@ -91,9 +99,9 @@ namespace Tili_Toli
         }
         private void set_form()
         {
-            this.MinimumSize = new Size(szelesseg + handler_width, magassag);
-            this.MaximizeBox = false;
             this.ClientSize = new Size(szelesseg + handler_width, magassag);
+            this.MinimumSize = new Size(szelesseg + handler_width, this.ClientSize.Height);
+            this.MaximizeBox = false;
         }
         private Panel set_game_panel()
         {
@@ -117,13 +125,25 @@ namespace Tili_Toli
                 }
             }
         }
+        private void win_queue_set()
+        {
+            int sorszam = 0;
+            for (int i = 0; i < max; i++)
+            {
+                for (int j = 0; j < maxn; j++)
+                {
+                    sorszam++;
+                    correct_queue[i, j] = sorszam;
+                }
+            }
+        }
         private Panel set_handler()
         {
             Panel handler = new Panel();
             handler.Size = new Size(handler_width, magassag);
             handler.Location = new Point(szelesseg, 0);
             Button button = new Button();
-            button.Text = "Keveres";
+            button.Text = "New game";
             button.Size = new Size(handler_width, 100);
             button.FlatStyle = FlatStyle.Standard;
             button.Click += Handler_Click;
@@ -132,6 +152,7 @@ namespace Tili_Toli
             label.Size = new Size(handler_width, 100);
             label.Location = new Point(0, button.Height);
             label.Name = "score";
+            label.Font = new Font("Arial", 24, FontStyle.Bold);
             handler.Controls.Add(button);
             handler.Controls.Add(label);
             return handler;
@@ -162,6 +183,8 @@ namespace Tili_Toli
         }
         private void Handler_Click(object sender, EventArgs e)
         {
+            timer.Start();
+            time = 100;
             Kever();
         }
 
@@ -176,7 +199,7 @@ namespace Tili_Toli
                 {
                     do
                     {
-                        szám = vél.Next(max * max);
+                        szám = vél.Next(1,(max * max+1));
                         k = számok.IndexOf(szám);
                     } while (k != -1);
                     számok.Add(szám);
@@ -184,7 +207,7 @@ namespace Tili_Toli
                     //gombok[i, j].Text = gombok[i, j].Tag.ToString();
                     index index = number_to_index(szám);
                     gombok[i, j].BackgroundImage = images[index.x, index.y];
-                    if (szám == 0)
+                    if (int.Parse(gombok[i, j].BackgroundImage.Tag.ToString()) == 1)
                     {
                         gombok[i, j].Visible = false;
                         lyukx = i;
@@ -243,6 +266,12 @@ namespace Tili_Toli
                 lyukx = x;
                 lyuky = y;
             }
+            if (win())
+            {
+                gombok[lyukx, lyuky].Visible = true;
+                MessageBox.Show("You win! \n It takes " + (100 - time) + "s to clear this stage \n Wanna play more?", "Tili-toli", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                //build dialog a next stage
+            }
         }
         private index number_to_index(int number)
         {
@@ -268,30 +297,23 @@ namespace Tili_Toli
         }
         private bool win()
         {
-            bool one_fault = false;
+            //bool one_fault = false;
             for (int i = 0; i < max; i++)
             {
-                for (int j = 0; j < maxn-1; j++)
+                for (int j = 0; j < maxn; j++)
                 {
                     //gombok[i, j].Text = sorszam.ToString();
-                    gombok[i, j].Text = ": " + gombok[i, j].BackgroundImage.Tag.ToString();
-                    if ((int.Parse(gombok[i, j + 1].BackgroundImage.Tag.ToString())) == (int.Parse(gombok[i, j].BackgroundImage.Tag.ToString())+1))
+                    if ((int.Parse(gombok[i, j].BackgroundImage.Tag.ToString())) == correct_queue[i,j])
                     {
+
                     }
                     else
                     {
-                        if (!one_fault)
-                        {
-                            one_fault = true;
-                        }
-                        else
-                        {
                             return false;
-                        }
                     }
                 }
             }
-            return false;
+            return true;
         }
     }
     public class index
