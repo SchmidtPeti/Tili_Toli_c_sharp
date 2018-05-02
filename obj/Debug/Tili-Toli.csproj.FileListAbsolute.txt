@@ -1,0 +1,20 @@
+D:\Tukora Marcell 10.P\Tili-Toli\Tili-Toli\bin\Debug\Tili-Toli.exe.config
+D:\Tukora Marcell 10.P\Tili-Toli\Tili-Toli\bin\Debug\Tili-Toli.exe
+D:\Tukora Marcell 10.P\Tili-Toli\Tili-Toli\bin\Debug\Tili-Toli.pdb
+D:\Tukora Marcell 10.P\Tili-Toli\Tili-Toli\obj\Debug\Tili-Toli.csprojResolveAssemblyReference.cache
+D:\Tukora Marcell 10.P\Tili-Toli\Tili-Toli\obj\Debug\Tili_Toli.frmTilitoli.resources
+D:\Tukora Marcell 10.P\Tili-Toli\Tili-Toli\obj\Debug\Tili_Toli.Properties.Resources.resources
+D:\Tukora Marcell 10.P\Tili-Toli\Tili-Toli\obj\Debug\Tili-Toli.csproj.GenerateResource.Cache
+D:\Tukora Marcell 10.P\Tili-Toli\Tili-Toli\obj\Debug\Tili-Toli.csproj.CoreCompileInputs.cache
+D:\Tukora Marcell 10.P\Tili-Toli\Tili-Toli\obj\Debug\Tili-Toli.exe
+D:\Tukora Marcell 10.P\Tili-Toli\Tili-Toli\obj\Debug\Tili-Toli.pdb
+H:\Tili-Toli\Tili-Toli\bin\Debug\Tili-Toli.exe.config
+H:\Tili-Toli\Tili-Toli\bin\Debug\Tili-Toli.exe
+H:\Tili-Toli\Tili-Toli\bin\Debug\Tili-Toli.pdb
+H:\Tili-Toli\Tili-Toli\obj\Debug\Tili-Toli.csprojResolveAssemblyReference.cache
+H:\Tili-Toli\Tili-Toli\obj\Debug\Tili_Toli.frmTilitoli.resources
+H:\Tili-Toli\Tili-Toli\obj\Debug\Tili_Toli.Properties.Resources.resources
+H:\Tili-Toli\Tili-Toli\obj\Debug\Tili-Toli.csproj.GenerateResource.Cache
+H:\Tili-Toli\Tili-Toli\obj\Debug\Tili-Toli.csproj.CoreCompileInputs.cache
+H:\Tili-Toli\Tili-Toli\obj\Debug\Tili-Toli.exe
+H:\Tili-Toli\Tili-Toli\obj\Debug\Tili-Toli.pdb
