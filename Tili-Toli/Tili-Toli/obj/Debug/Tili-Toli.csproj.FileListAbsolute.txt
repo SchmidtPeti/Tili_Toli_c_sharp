@@ -18,3 +18,13 @@ H:\Tili-Toli\Tili-Toli\obj\Debug\Tili-Toli.csproj.GenerateResource.Cache
 H:\Tili-Toli\Tili-Toli\obj\Debug\Tili-Toli.csproj.CoreCompileInputs.cache
 H:\Tili-Toli\Tili-Toli\obj\Debug\Tili-Toli.exe
 H:\Tili-Toli\Tili-Toli\obj\Debug\Tili-Toli.pdb
+C:\Users\schmi\Projects\Tili_Toli_c_sharp\Tili-Toli\Tili-Toli\bin\Debug\Tili-Toli.exe.config
+C:\Users\schmi\Projects\Tili_Toli_c_sharp\Tili-Toli\Tili-Toli\bin\Debug\Tili-Toli.exe
+C:\Users\schmi\Projects\Tili_Toli_c_sharp\Tili-Toli\Tili-Toli\bin\Debug\Tili-Toli.pdb
+C:\Users\schmi\Projects\Tili_Toli_c_sharp\Tili-Toli\Tili-Toli\obj\Debug\Tili-Toli.csprojAssemblyReference.cache
+C:\Users\schmi\Projects\Tili_Toli_c_sharp\Tili-Toli\Tili-Toli\obj\Debug\Tili_Toli.frmTilitoli.resources
+C:\Users\schmi\Projects\Tili_Toli_c_sharp\Tili-Toli\Tili-Toli\obj\Debug\Tili_Toli.Properties.Resources.resources
+C:\Users\schmi\Projects\Tili_Toli_c_sharp\Tili-Toli\Tili-Toli\obj\Debug\Tili-Toli.csproj.GenerateResource.cache
+C:\Users\schmi\Projects\Tili_Toli_c_sharp\Tili-Toli\Tili-Toli\obj\Debug\Tili-Toli.csproj.CoreCompileInputs.cache
+C:\Users\schmi\Projects\Tili_Toli_c_sharp\Tili-Toli\Tili-Toli\obj\Debug\Tili-Toli.exe
+C:\Users\schmi\Projects\Tili_Toli_c_sharp\Tili-Toli\Tili-Toli\obj\Debug\Tili-Toli.pdb

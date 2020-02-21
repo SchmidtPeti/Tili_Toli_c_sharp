@@ -20,7 +20,7 @@ namespace Tili_Toli
         }
 
         Timer timer;
-        static int max = 2, maxn = 2, magassag = 500, szelesseg = 500, lyukx, lyuky, handler_width = 200, time = 100;
+        static int max = 5, maxn = 5, magassag = 500, szelesseg = 500, lyukx, lyuky, handler_width = 200, time = 500;
 
         Button[,] gombok = new Button[max, maxn];
         Image[,] images = new Image[max, maxn];
